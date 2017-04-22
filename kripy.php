@@ -2,11 +2,11 @@
 <html>
 <body>
  <?php
-$x = 75;
-$y = 25;
+$x = 12;
+$y = 12;
  
 function addition() {
-    $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+    $GLOBALS['z'] = $GLOBALS['x'] * $GLOBALS['y'];
 }
  
 addition();
