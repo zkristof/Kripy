@@ -2,14 +2,11 @@
 <html>
 <body>
  <?php
-<<<<<<< HEAD
+ //globals
 $x = 4;
 $y = 4;
-=======
-$x = 12;
-$y = 12;
->>>>>>> origin/php_globals
- 
+
+
 function addition() {
     $GLOBALS['z'] = $GLOBALS['x'] * $GLOBALS['y'];
 }
@@ -18,6 +15,7 @@ addition();
 echo $z;
 ?> 
 <?php
+//podatki o seerverju, hostu...
 echo $_SERVER['PHP_SELF'];
 echo "<br>";
 echo $_SERVER['SERVER_NAME'];
@@ -29,6 +27,24 @@ echo "<br>";
 echo $_SERVER['HTTP_USER_AGENT'];
 echo "<br>";
 echo $_SERVER['SCRIPT_NAME'];
+?>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="fname">
+  <input type="submit">
+</form>
+
+<?php
+//post superglobal inside the same document
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = $_POST['fname'];
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
 ?>
 
 </body>
