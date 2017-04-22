@@ -2,8 +2,13 @@
 <html>
 <body>
  <?php
+<<<<<<< HEAD
 $x = 4;
 $y = 4;
+=======
+$x = 12;
+$y = 12;
+>>>>>>> origin/php_globals
  
 function addition() {
     $GLOBALS['z'] = $GLOBALS['x'] * $GLOBALS['y'];
